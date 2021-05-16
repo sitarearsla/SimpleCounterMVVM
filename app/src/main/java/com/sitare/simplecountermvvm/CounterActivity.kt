@@ -17,6 +17,8 @@ class CounterActivity : AppCompatActivity() {
         val clickMeButton = findViewById<Button>(R.id.button)
         val counterTextView = findViewById<TextView>(R.id.textView)
 
+        counterTextView.text = viewModel.counter()
+
         clickMeButton.setOnClickListener {
             viewModel.incrementCounter()
             counterTextView.text = viewModel.counter()
