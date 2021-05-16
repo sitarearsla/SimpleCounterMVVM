@@ -20,7 +20,7 @@ class CounterActivity : AppCompatActivity() {
         counterTextView.text = viewModel.counter()
 
         clickMeButton.setOnClickListener {
-            viewModel.incrementCounter()
+            viewModel.onButtonClicked()
             counterTextView.text = viewModel.counter()
         }
     }

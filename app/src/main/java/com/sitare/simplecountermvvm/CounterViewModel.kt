@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 class CounterViewModel : ViewModel() {
     private var counter = 0
 
-    fun incrementCounter(){
+    fun onButtonClicked(){
         counter++
     }
 
