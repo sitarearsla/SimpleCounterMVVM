@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SimpleCounterMVVM</string>
+    <string name="click_me">Click ME</string>
+
+</resources>
