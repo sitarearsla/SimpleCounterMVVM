@@ -9,7 +9,9 @@ import androidx.activity.viewModels
 
 class CounterActivity : AppCompatActivity() {
 
-    private val viewModel by viewModels<CounterViewModel>()
+    private val viewModel : CounterViewModel by viewModels {
+        CounterViewModelFactory(0)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

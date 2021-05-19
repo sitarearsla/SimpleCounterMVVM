@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 
-class CounterViewModel : ViewModel() {
+class CounterViewModel(previousCounter: Int) : ViewModel() {
     /**
      * LATEINIT - LATE INITIALIZATION
      * LAZY -
@@ -29,15 +29,18 @@ class CounterViewModel : ViewModel() {
      * 2 - Life Cycle Awareness
 
      */
+
+    //POLYMORPHISM
+    // & TYPE ERASURE
     private val _counter = MutableLiveData<Int>()
-    val counter : LiveData<Int>
+    private val counter : LiveData<Int>
         get() = _counter
-    val counterString = Transformations.map(counter) {
+    val counterString: LiveData<String> = Transformations.map(counter) {
         it.toString()
     }
 
     init {
-        _counter.value = 0
+        _counter.value = previousCounter
         Log.e("ViewModel", "View Model is created")
     }
 
